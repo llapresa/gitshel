@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25-abr-2014 21:04:14 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.luis.model.Conocimientos" table="conocimientos" catalog="empleados">
+        <id name="idconocimientos" type="java.lang.Integer">
+            <column name="idconocimientos" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <set name="empleados" table="empleado_conocimiento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idConocimientocol" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.luis.model.Empleado">
+                <column name="idEmpleado" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
