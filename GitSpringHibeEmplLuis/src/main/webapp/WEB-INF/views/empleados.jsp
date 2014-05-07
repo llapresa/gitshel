@@ -24,6 +24,7 @@
                     <tr class="success">
                         <th>Nombre</th>
                         <th>Salario</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,10 @@
                     <tr>
                         <td>${e.nombre}</td>
                         <td><fmt:formatNumber type="currency" value="${e.salario}"/></td>
+                        <td>
+                        	<a href="modificarempleado.htm?id=${e.idEmpleado}" class="btn btn-success">Modificar</a>
+                        	<a href="#" id="lnkBor" data-code="${e.idEmpleado}" class="btn btn-success">Borrar</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>

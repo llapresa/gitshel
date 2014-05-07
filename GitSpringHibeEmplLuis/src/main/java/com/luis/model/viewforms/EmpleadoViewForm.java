@@ -14,6 +14,7 @@ import java.util.Date;
  */
 public class EmpleadoViewForm {
 
+	private Integer idEmpleado;
 	private String nombre;
 	private Double salario;
 	private Integer puesto;
@@ -23,6 +24,14 @@ public class EmpleadoViewForm {
 	public EmpleadoViewForm() {
 		super();
 		fechaAlta = new Date();
+	}
+
+	public Integer getIdEmpleado() {
+		return idEmpleado;
+	}
+
+	public void setIdEmpleado(Integer idEmpleado) {
+		this.idEmpleado = idEmpleado;
 	}
 
 	public String getNombre() {

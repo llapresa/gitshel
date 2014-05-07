@@ -17,19 +17,20 @@
         <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     </head>
     <body style="padding: 10px">
-            
-        <h1>Portal de Gestión de Empleados</h1>
+        <div class="jumbotron">
+			  <h1>Spring-Hibernate<br> <small>Portal de Gestión de Empleados</small></h1>
+		</div>
 
-        <table>
+        <table class="col-lg-12">
             <tr>
-                <td style="padding: 2px"><a href="empleados.htm" class="btn btn-success">Ver Empleados</a></td>
-                <td style="padding: 2px"><a href="conocimientos.htm" class="btn btn-success">Ver Conocimientos</a></td>
-                <td style="padding: 2px"><a href="puestos.htm" class="btn btn-success">Ver Puestos</a></td>
+                <td style="padding: 2px"><a href="empleados.htm" class="btn btn-success col-lg-12">Ver Empleados</a></td>
+                <td style="padding: 2px"><a href="conocimientos.htm" class="btn btn-success col-lg-12">Ver Conocimientos</a></td>
+                <td style="padding: 2px"><a href="puestos.htm" class="btn btn-success col-lg-12">Ver Puestos</a></td>
             </tr>
             <tr>
-                <td style="padding: 2px"><a href="altaempleado.htm" class="btn btn-success">Nuevo Empleado</a></td>
-                <td style="padding: 2px"><a href="altaconocimiento.htm" class="btn btn-success">Nuevo Conocimiento</a></td>
-                <td style="padding: 2px"><a href="altapuesto.htm" class="btn btn-success">Nuevo Puesto</a></td>
+                <td style="padding: 2px"><a href="altaempleado.htm" class="btn btn-success col-lg-12">Nuevo Empleado</a></td>
+                <td style="padding: 2px"><a href="altaconocimiento.htm" class="btn btn-success col-lg-12">Nuevo Conocimiento</a></td>
+                <td style="padding: 2px"><a href="altapuesto.htm" class="btn btn-success col-lg-12">Nuevo Puesto</a></td>
             </tr>
         </table>
         
