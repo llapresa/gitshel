@@ -39,6 +39,11 @@
             	</form:select>
             	<form:errors path="conocimientos"/>
             </div>
+            <div class="form-group col-md-4 col-lg-2">
+            	<form:label class="control-label" path="foto">File input:</form:label>
+            	<form:input path="foto" type="file" />
+            </div>
+            
             <br>
             <div class="col-md-4 col-lg-2">
             	<input type="submit" value="Insert" class="btn btn-success">

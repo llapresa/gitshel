@@ -22,6 +22,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr class="success">
+                    	<th>Foto</th>
                         <th>Nombre</th>
                         <th>Salario</th>
                         <th>Acciones</th>
@@ -30,6 +31,7 @@
                 <tbody>
                 <c:forEach items="${empleados}" var="e">
                     <tr>
+                    	<td><img src="<c:url value="${e.foto}"/>" /></td>
                         <td>${e.nombre}</td>
                         <td><fmt:formatNumber type="currency" value="${e.salario}"/></td>
                         <td>
@@ -41,6 +43,7 @@
                 </tbody>
             </table>
             <a href="welcome.htm" class="btn btn-success">Inicio</a>
+            <img src="<c:url value="${e.foto}"/>" />
         </div>
         
         

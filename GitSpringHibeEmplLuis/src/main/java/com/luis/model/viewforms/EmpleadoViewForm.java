@@ -8,6 +8,8 @@ package com.luis.model.viewforms;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /**
  * 
  * @author alumno
@@ -20,6 +22,8 @@ public class EmpleadoViewForm {
 	private Integer puesto;
 	private Date fechaAlta;
 	private Integer[] conocimientos;
+
+	private MultipartFile foto;
 
 	public EmpleadoViewForm() {
 		super();
@@ -72,6 +76,14 @@ public class EmpleadoViewForm {
 
 	public void setConocimientos(Integer[] conocimientos) {
 		this.conocimientos = conocimientos;
+	}
+
+	public MultipartFile getFoto() {
+		return foto;
+	}
+
+	public void setFoto(MultipartFile foto) {
+		this.foto = foto;
 	}
 
 }

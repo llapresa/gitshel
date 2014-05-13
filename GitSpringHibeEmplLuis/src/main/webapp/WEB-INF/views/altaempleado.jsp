@@ -11,7 +11,7 @@
     </head>
     <body style="padding: 10px">
         
-        <form:form method="post" commandName="empleado" role="form">
+        <form:form method="post" commandName="empleado" role="form" enctype="multipart/form-data">
             <div class="form-group col-md-4 col-lg-2">
                 <form:label class="control-label" path="nombre">Nombre:</form:label>
                 <form:input class="form-control" path="nombre"/>
@@ -22,7 +22,7 @@
                 <form:input class="form-control" path="salario"/>
                 <form:errors path="salario"/>
             </div>
-            <div class="form-group col-md-4 col-lg-3">
+            <div class="form-group col-md-4 col-lg-2">
             	<form:label class="control-label" path="puesto">Puesto:</form:label>
             	<form:select class="form-control" path="puesto"><!--  multiple="true" permite varios -->
             		<!-- Si queremos añadir una opcion por defecto -->
@@ -38,11 +38,13 @@
             	</form:select>
             	<form:errors path="conocimientos"/>
             </div>
-            <br>
+            <div class="form-group col-md-4 col-lg-2">
+            	<form:label class="control-label" path="foto">File input:</form:label>
+            	<form:input path="foto" type="file" />
+            </div>
             <div class="col-md-4 col-lg-2">
             	<input type="submit" value="Insert" class="btn btn-success">
             </div>
-            
         </form:form>
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

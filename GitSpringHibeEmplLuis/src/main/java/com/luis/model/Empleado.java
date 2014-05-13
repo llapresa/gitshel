@@ -19,6 +19,7 @@ public class Empleado implements java.io.Serializable {
 	private double salario;
 	private Date fechaAlta;
 	private Set<Conocimientos> conocimientoses = new HashSet<Conocimientos>(0);
+	private String foto;
 
 	public Empleado() {
 	}
@@ -83,6 +84,14 @@ public class Empleado implements java.io.Serializable {
 
 	public void setConocimientoses(Set<Conocimientos> conocimientoses) {
 		this.conocimientoses = conocimientoses;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 }

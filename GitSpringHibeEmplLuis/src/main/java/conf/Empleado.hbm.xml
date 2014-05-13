@@ -20,6 +20,9 @@
         <property name="fechaAlta" type="timestamp">
             <column name="fechaAlta" length="19" />
         </property>
+        <property name="foto" type="string">
+            <column name="foto" length="450" not-null="false" />
+        </property>
         <set name="conocimientoses" table="empleado_conocimiento" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="idEmpleado" not-null="true" />
