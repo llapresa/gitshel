@@ -11,5 +11,6 @@
     <mapping resource="/conf/Conocimientos.hbm.xml"/>
     <mapping resource="/conf/Puesto.hbm.xml"/>
     <mapping resource="/conf/Empleado.hbm.xml"/>
+    <mapping resource="/conf/Rol.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

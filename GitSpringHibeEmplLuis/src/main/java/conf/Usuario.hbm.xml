@@ -14,5 +14,8 @@
         <property name="password" type="string">
             <column name="password" length="45" not-null="true" />
         </property>
+        <many-to-one name="rol" class="com.luis.model.Rol" fetch="select">
+            <column name="idrol" />
+        </many-to-one>
     </class>
 </hibernate-mapping>

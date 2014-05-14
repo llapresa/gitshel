@@ -85,11 +85,16 @@
 	<bean id="daoConocimiento" class="com.luis.services.ManagerConocimientos">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="daoAuth" class="com.luis.services.ManagerAuth">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
 	<!-- Definimos la seguridad declarativa -->
 	<s:http auto-config="true">
 		<s:intercept-url pattern="/ver**" access="ROLE_USUARIO" />
 		<s:intercept-url pattern="/admin**" access="ROLE_ADMINISTRADOR" />
+		<s:form-login login-page="/login.htm"/>
 	</s:http>
 
 	<s:authentication-manager>
