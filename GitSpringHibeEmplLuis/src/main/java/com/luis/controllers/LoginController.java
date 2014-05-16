@@ -1,9 +1,17 @@
 package com.luis.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,10 +45,22 @@ public class LoginController {
 				usuario.getPassword());
 
 		if (resultado != null) {
-			req.setAttribute("us", resultado);
-			return "redirect: /guardarcontexto.htm";
+			// Lista de privilegios que tiene un usuario
+			List<GrantedAuthority> perm = new ArrayList<GrantedAuthority>();
+			perm.add(new SimpleGrantedAuthority(resultado.getRol().getRol()));
+
+			// Creamos el token de autenticacion para que cada vez que sea
+			// requerido
+			// el sistema recurra al mismo
+			Authentication auth = new UsernamePasswordAuthenticationToken(
+					resultado.getLogin(), resultado.getPassword(), perm);
+
+			// Almacenamos la autenticacon en el contexto de seguridad
+			SecurityContextHolder.getContext().setAuthentication(auth);
+
+			return "welcome";// "redirect:/adminaltaempleado.htm";
 		} else
-			return "redirect: /empleados.htm";
+			return "login";
 
 	}
 }

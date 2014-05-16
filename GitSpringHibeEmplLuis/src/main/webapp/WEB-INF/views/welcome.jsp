@@ -28,11 +28,25 @@
                 <td style="padding: 2px"><a href="puestos.htm" class="btn btn-success col-lg-12">Ver Puestos</a></td>
             </tr>
             <tr>
-                <td style="padding: 2px"><a href="altaempleado.htm" class="btn btn-success col-lg-12">Nuevo Empleado</a></td>
-                <td style="padding: 2px"><a href="altaconocimiento.htm" class="btn btn-success col-lg-12">Nuevo Conocimiento</a></td>
-                <td style="padding: 2px"><a href="altapuesto.htm" class="btn btn-success col-lg-12">Nuevo Puesto</a></td>
+                <td style="padding: 2px"><a href="adminaltaempleado.htm" class="btn btn-success col-lg-12">Nuevo Empleado</a></td>
+                <td style="padding: 2px"><a href="adminaltaconocimiento.htm" class="btn btn-success col-lg-12">Nuevo Conocimiento</a></td>
+                <td style="padding: 2px"><a href="adminaltapuesto.htm" class="btn btn-success col-lg-12">Nuevo Puesto</a></td>
             </tr>
         </table>
+        
+        <!-- Verificamos si existe un usuario y mostramos el boton de salir -->
+        <c:choose>
+        	<c:when test="${pageContext.request.userPrincipal.name!=null}">
+	        	Usuario ${pageContext.request.userPrincipal.name}
+	        	<a href='<c:url value="j_spring_security_logout" />' class="btn btn-success">Logout</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="login.htm" class="btn btn-success col-lg-12">Login</a>
+        	</c:otherwise>		
+        </c:choose>
+        
+        
+        
         
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

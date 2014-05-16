@@ -34,7 +34,7 @@ import com.luis.services.ManagerEmpleados;
 import com.luis.services.ManagerPuestos;
 
 @Controller
-@RequestMapping(value = "/altaempleado.htm")
+@RequestMapping(value = "/adminaltaempleado.htm")
 public class AltaEmpleadoController {
 
 	static String path;

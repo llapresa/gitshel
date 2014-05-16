@@ -3,6 +3,7 @@ package com.luis.services;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -31,8 +32,11 @@ public class ManagerAuth extends HibernateDaoSupport {
 		}
 		List<Usuario> usuarios = query.list();
 
-		if (usuarios.size() > 0)
+		if (usuarios.size() > 0) {
 			usuario = usuarios.get(0);
+			Hibernate.initialize(usuario.getRol());
+		}
+
 		return usuario;
 	}
 }

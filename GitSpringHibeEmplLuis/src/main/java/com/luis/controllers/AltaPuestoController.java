@@ -6,51 +6,55 @@
 
 package com.luis.controllers;
 
-import com.luis.model.Puesto;
-import com.luis.model.viewforms.PuestoViewForm;
-import com.luis.services.ManagerPuestos;
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.luis.model.Puesto;
+import com.luis.model.viewforms.PuestoViewForm;
+import com.luis.services.ManagerPuestos;
+
 @Controller
-@RequestMapping(value="/altapuesto.htm")
+@RequestMapping(value = "/adminaltapuesto.htm")
 public class AltaPuestoController {
-    
-    @Autowired
-    private ManagerPuestos managerPuestos;
 
-    public ManagerPuestos getManagerPuestos() {
-        return managerPuestos;
-    }
+	@Autowired
+	private ManagerPuestos managerPuestos;
 
-    public void setManagerPuestos(ManagerPuestos managerPuestos) {
-        this.managerPuestos = managerPuestos;
-    }
-    
-    @RequestMapping(method= RequestMethod.POST)//el bean empleadoviewform debe tener el constructor vacio
-    protected String onSubmit(PuestoViewForm puesto, BindingResult result){
-        
-        if(result.hasErrors())
-            return "altapuesto";
-        
-        Puesto pu = new Puesto();
-        pu.setNombre(puesto.getNombre());
-        
-        managerPuestos.addPuesto(pu);
-        
-        return "redirect:/puestos.htm";
-    }
-    
-    @RequestMapping(method = RequestMethod.GET)
-    protected PuestoViewForm formBackingObject(HttpServletRequest req)throws Exception{
-        
-        PuestoViewForm puesto = new PuestoViewForm();
-        req.setAttribute("puesto", puesto);
-        return puesto;
-    }
-    
+	public ManagerPuestos getManagerPuestos() {
+		return managerPuestos;
+	}
+
+	public void setManagerPuestos(ManagerPuestos managerPuestos) {
+		this.managerPuestos = managerPuestos;
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	// el bean empleadoviewform debe tener el constructor vacio
+	protected String onSubmit(PuestoViewForm puesto, BindingResult result) {
+
+		if (result.hasErrors())
+			return "altapuesto";
+
+		Puesto pu = new Puesto();
+		pu.setNombre(puesto.getNombre());
+
+		managerPuestos.addPuesto(pu);
+
+		return "redirect:/puestos.htm";
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	protected PuestoViewForm formBackingObject(HttpServletRequest req)
+			throws Exception {
+
+		PuestoViewForm puesto = new PuestoViewForm();
+		req.setAttribute("puesto", puesto);
+		return puesto;
+	}
+
 }
