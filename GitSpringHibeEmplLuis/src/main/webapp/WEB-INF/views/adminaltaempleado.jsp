@@ -15,12 +15,12 @@
             <div class="form-group col-md-4 col-lg-2">
                 <form:label class="control-label" path="nombre">Nombre:</form:label>
                 <form:input class="form-control" path="nombre"/>
-                <form:errors path="nombre"/>
+                <form:errors class="label label-danger" path="nombre"/>
             </div>
             <div class="form-group col-md-4 col-lg-2">
                 <form:label class="control-label" path="salario">Salario:</form:label>
                 <form:input class="form-control" path="salario"/>
-                <form:errors path="salario"/>
+                <form:errors class="label label-danger" path="salario"/>
             </div>
             <div class="form-group col-md-4 col-lg-2">
             	<form:label class="control-label" path="puesto">Puesto:</form:label>
@@ -29,14 +29,14 @@
             		<form:option value="-1" label="-De que curra este-"/>
             		<form:options items="${puestos}" />
             	</form:select>
-            	<form:errors path="puesto"/>
+            	<form:errors class="label label-danger" path="puesto"/>
             </div>
             <div class="form-group col-md-4 col-lg-3">
             	<form:label class="control-label" path="conocimientos">Conocimientos:</form:label>
             	<form:select class="form-control" path="conocimientos" multiple="multiple"><!--  multiple="true" permite varios -->
             		<form:options items="${conocimientos}" />
             	</form:select>
-            	<form:errors path="conocimientos"/>
+            	<form:errors class="label label-danger" path="conocimientos"/>
             </div>
             <div class="form-group col-md-4 col-lg-2">
             	<form:label class="control-label" path="foto">File input:</form:label>
