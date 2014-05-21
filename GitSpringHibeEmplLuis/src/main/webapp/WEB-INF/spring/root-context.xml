@@ -23,16 +23,16 @@
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
-	<bean id="dataSource"
+	<!--bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="com.mysql.jdbc.Driver"
 		p:url="jdbc:mysql://localhost:3306/empleados?zeroDateTimeBehavior=convertToNull"
-		p:username="root" p:password="root" />
+		p:username="root" p:password="root" /-->
 
 	<!-- conexion a base de datos del profesor -->
-	<!--bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
 		p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://luisgilpruebas.cloudapp.net:3306/curso?zeroDateTimeBehavior=convertToNull" 
-		p:username="curso" p:password="curso" / -->
+		p:username="curso" p:password="curso" />
 
 	<!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
